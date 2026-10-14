@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <string>
 #include <cstring>
 #include <unistd.h>
@@ -81,7 +82,7 @@ int main()
 			std::cout << line.substr(4) << std::flush;
 			std::string input;
 			if (!std::getline(std::cin, input))
-				break; 
+				break;
 			if (!sendLine(client, input))
 				break;
 		}

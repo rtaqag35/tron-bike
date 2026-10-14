@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdio>
 #include <string>
 #include <cstdlib>
 #include <cstring>
@@ -116,7 +117,7 @@ void *clientThread(void *param)
 	{
 		bool won = false;
 		if (!playGame(fd, pending, won))
-			break; 
+			break;
 
 		if (!sendLine(fd, "ASK Play again? (y/n): ") || !recvLine(fd, pending, line))
 			break;
@@ -186,7 +187,7 @@ int main()
 			close(clientSocket);
 			continue;
 		}
-		pthread_detach(tid); 
+		pthread_detach(tid);
 	}
 
 	close(server);
